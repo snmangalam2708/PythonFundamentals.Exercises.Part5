@@ -33,3 +33,7 @@ Open the program called *list_utils.py*
 
 * For each function, remove the line containing the pass statement and implement the functionality described in the docstrings.
 * Run the unit tests to validate that the implementation passes unit tests. 
+
+```
+python3 -m unittest test_list_utils.py 
+```
