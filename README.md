@@ -26,3 +26,10 @@ Open the program called *anagram.py*
 ```
 python3 -m unittest test_anagram.py 
 ```
+
+## Exercise 3 
+
+Open the program called *list_utils.py*
+
+* For each function, remove the line containing the pass statement and implement the functionality described in the docstrings.
+* Run the unit tests to validate that the implementation passes unit tests. 
