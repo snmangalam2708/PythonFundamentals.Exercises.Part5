@@ -16,6 +16,19 @@ python3 -m unittest test_string_utils.py
 
 ## Exercise 2
 
+A [palindrome](https://en.wikipedia.org/wiki/Palindrome) word, phrase, or sequence that reads the same backward as forward.
+
+Open the program called *palindrome.py*
+
+* For each function, remove the line containing the pass statement and implement the functionality described in the docstrings.
+* Run the unit tests to validate that the implementation passes unit tests. 
+
+```
+python3 -m unittest test_palindrome.py 
+```
+
+## Exercise 3 
+
 An [anagram](https://en.wikipedia.org/wiki/Anagram) is a word, phrase, or name formed by rearranging the letters of another.  
 
 Open the program called *anagram.py*
@@ -27,7 +40,7 @@ Open the program called *anagram.py*
 python3 -m unittest test_anagram.py 
 ```
 
-## Exercise 3 
+## Exercise 4
 
 Open the program called *list_utils.py*
 
