@@ -5,16 +5,20 @@ import palindrome
 class PalindromeTest(unittest.TestCase):
 
     def test_is_palindrome(self):
-        self.assertTrue(palindrome.is_palindrome("redivider"))
-        self.assertTrue(palindrome.is_palindrome("deified"))
-        self.assertTrue(palindrome.is_palindrome("civic"))
-        self.assertTrue(palindrome.is_palindrome("radar"))
-        self.assertTrue(palindrome.is_palindrome("level"))
+        test_cases = [
+            ("redivider", True),
+            ("deified", True),
+            ("civic", True),
+            ("radar", True),
+            ("level", True),
+            ("Mr Owl ate my metal worm", True),
+            ("Do geese see God", True),
+            ("Was it a car or a cat I saw", True),
+            ("Murder for a jar of red rum", True),
+            ("palindrome", False),
+            ("Python", False)
+        ]
+        for str_in, expected in test_cases:
+            with self.subTest(f"{str_in} -> {expected}"):
+                self.assertEqual(expected, palindrome.is_palindrome(str_in))
 
-        self.assertTrue(palindrome.is_palindrome("Mr Owl ate my metal worm"))
-        self.assertTrue(palindrome.is_palindrome("Do geese see God"))
-        self.assertTrue(palindrome.is_palindrome("Was it a car or a cat I saw"))
-        self.assertTrue(palindrome.is_palindrome("Murder for a jar of red rum"))
-
-        self.assertFalse(palindrome.is_palindrome("palindrome"))
-        self.assertFalse(palindrome.is_palindrome("Python"))
