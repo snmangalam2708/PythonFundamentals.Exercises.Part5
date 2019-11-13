@@ -5,28 +5,58 @@ import string_utils
 class TestStringUtils(unittest.TestCase):
 
     def test_str_len(self):
-        self.assertEqual(7, string_utils.str_len("roberto"))
-        self.assertEqual(4, string_utils.str_len("yoda"))
+        test_cases = [
+            (7, "roberto"),
+            (4, "yoda")
+        ]
+        for expected, word in test_cases:
+            with self.subTest(f"{word} -> {expected}"):
+                self.assertEqual(expected, string_utils.str_len(word))
 
     def test_first_char(self):
-        self.assertEqual("r", string_utils.first_char("roberto")) 
-        self.assertEqual("y", string_utils.first_char("yoda"))
+        test_cases = [
+            ("r", "roberto"),
+            ("y", "yoda")
+        ]
+        for expected, word in test_cases:
+            with self.subTest(f"{word} -> {expected}"):
+                self.assertEqual(expected, string_utils.first_char(word))
 
     def test_last_char(self):
-        self.assertEqual("o", string_utils.last_char("roberto")) 
-        self.assertEqual("a", string_utils.last_char("yoda"))
+        test_cases = [
+            ("o", "roberto"),
+            ("a", "yoda")
+        ]
+        for expected, word in test_cases:
+            with self.subTest(f"{expected} -> {word}"):
+                self.assertEqual(expected, string_utils.last_char(word))
 
     def test_input_has_substring(self):
-        self.assertTrue(string_utils.input_has_substring("Roberto", "Rob"))
-        self.assertFalse(string_utils.input_has_substring("Yoda", "Dark"))
+        test_cases = [
+            ("Roberto", "Rob", True),
+            ("Yoda", "Dark", False)
+        ]
+        for word, substring, expected in test_cases:
+            with self.subTest(f"{word}, {substring} -> {expected}"):
+                self.assertEquals(expected, string_utils.input_has_substring(word, substring))
 
     def test_substring(self):
-        self.assertEqual("rob", string_utils.substring("roberto", 0, 3)) 
-        self.assertEqual("da", string_utils.substring("yoda", 2, 4))
+        test_cases = [
+            ("roberto", 0, 3, "rob"),
+            ("yoda", 2, 4, "da")
+        ]
+        for str_in, start, stop, expected in test_cases:
+            with self.subTest(f"{str_in}, {start}, {stop} -> {expected}"):
+                self.assertEqual(expected, string_utils.substring(str_in, start, stop))
 
     def test_opposite_case(self):
-        self.assertEqual("rOB", string_utils.opposite_case("Rob"))
-        self.assertEqual("yoda", string_utils.opposite_case("YODA"))
+        test_cases = [
+            ("Rob", "rOB"),
+            ("yoda", "YODA")
+        ]
+        for str_in, str_out in test_cases:
+            with self.subTest(f"{str_in} -> {str_out}"):
+                self.assertEqual(str_out, string_utils.opposite_case(str_in))
 
 
 if __name__ == '__main__':
