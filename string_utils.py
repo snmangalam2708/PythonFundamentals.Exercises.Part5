@@ -43,6 +43,6 @@ def opposite_case(str_in: str) -> str:
     """
     Given a string parameter, this function returns the same string back with each letter having the opposite case.
     Example: 
-    When input = "Roberto" the function returns "rOBERTO"
+    When input = "Python" the function returns "pYTHON"
     """
     pass  # remove pass statement and implement me
