@@ -1,6 +1,6 @@
+import math
 from typing import List
 from math import ceil
-
 
 def get_item_at_position(list_in: List, pos: int) -> List:
     """
@@ -10,8 +10,8 @@ def get_item_at_position(list_in: List, pos: int) -> List:
     :param pos: Position of desired item in list_in
     :return: Item in pos
     """
-    pass  # remove pass statement and implement me
-
+    return list_in[pos]
+    
 
 def print_list_items(list_in: List) -> None:
     """
@@ -20,7 +20,8 @@ def print_list_items(list_in: List) -> None:
     :param list_in: Input list
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for i in list_in:
+      print(i) 
 
 
 def sort_by_commit_count(list_in: List) -> List:
@@ -30,7 +31,8 @@ def sort_by_commit_count(list_in: List) -> List:
     :param list_in: A list where each entry is a list containing a name and the commit count corresponding to a user
     :return: The same list sorted in ascending order based on the commit count
     """
-    pass  # remove pass statement and implement me
+    list_in.sort(key = lambda commit:commit[1])
+    return list_in
 
 
 def gen_list_of_nums(n: int) -> List[int]:
@@ -40,7 +42,10 @@ def gen_list_of_nums(n: int) -> List[int]:
     :param n: The number of items the result should contain
     :return: A list of integers
     """
-    pass  # remove pass statement and implement me
+    l = list()
+    for i in range(n):
+        l.append(i)
+    return l
 
 
 def half_list(list_in: List, half: int) -> List:
@@ -52,8 +57,13 @@ def half_list(list_in: List, half: int) -> List:
     If the length of list_in is an odd number, round the half value up (hint: math.ceil()).
     :return: A list.
     """
-    pass  # remove pass statement and implement me
-
+    new_list = list()
+    pos = math.ceil(len(list_in)/2)
+    if half == 1:
+        new_list = list_in[:pos]
+    else:
+        new_list = list_in[pos:]
+    return new_list
 
 def remove_odds(list_in: List[int]) -> None:
     """
@@ -61,16 +71,21 @@ def remove_odds(list_in: List[int]) -> None:
 
     :return: None
     """
-    pass  # remove pass statement and implement me
-
-
+    
+    for i in list_in:
+        if (i%2 == 1):
+            list_in.remove(i)
+  
+    
 def remove_evens(list_in: List[int]) -> None:
     """
     Given a list of integers, this function removes the even numbers from the same list.
 
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for i in list_in:
+        if (i%2 == 0):
+            list_in.remove(i)
 
 
 def concatenate_lists(list_a: List, list_b: List) -> List:
@@ -81,7 +96,7 @@ def concatenate_lists(list_a: List, list_b: List) -> List:
     :param list_b: Another list
     :return: A list containing all elements from list_a and list_b
     """
-    pass  # remove pass statement and implement me
+    return list_a + list_b
 
 
 def multiply_list(list_in: List, scalar: int) -> List:
@@ -93,4 +108,5 @@ def multiply_list(list_in: List, scalar: int) -> List:
     :param scalar: An integer
     :return: A list
     """
-    pass  # remove pass statement and implement me
+    new = list_in * scalar
+    return new

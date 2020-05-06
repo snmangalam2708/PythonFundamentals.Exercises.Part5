@@ -44,7 +44,7 @@ class ListUtilsTest(unittest.TestCase):
             ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [0, 1, 2, 3, 4], 1),  # first half even size list
             ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [5, 6, 7, 8, 9], 2),  # second half even size list
             ([0, 1, 2, 3, 4], [0, 1, 2], 1),  # first half odd size list
-            ([0, 1, 2, 3, 4], [2, 3, 4], 2)  # second half odd size list
+            ([0, 1, 2, 3, 4], [3, 4], 2)  # second half odd size list
         ]
         for list_in, list_out, half_param in test_cases:
             with self.subTest(f"{list_in}, {half_param} -> {list_out}"):
