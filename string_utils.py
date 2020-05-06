@@ -49,5 +49,3 @@ def opposite_case(str_in: str) -> str:
     When input = "Python" the function returns "pYTHON"
     """
     return str_in.swapcase()
-
-print(str_len("I am Beginner"))
